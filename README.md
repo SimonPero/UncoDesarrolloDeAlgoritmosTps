@@ -86,6 +86,7 @@ Repasar funciones de `String` en Java, ya que es común olvidar su sintaxis.
 * Entender conceptos básicos
 * Practicar casos con múltiples TDA
 * Especial atención a objetos dentro de otros objetos
+* Practicar TDA que usa de matriz y/o arreglo a otro TDA
 
 ---
 
