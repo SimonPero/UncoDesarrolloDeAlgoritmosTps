@@ -6,18 +6,36 @@ package TpRecursion;
  */
 public class trece {
     public static int encontrarMax(int[][] matriz) {
-        return recurMax(matriz, 0, 0, -1000);
+        return recurMax(matriz, 0, 0);
     }
 
-    public static int recurMax(int[][] matriz, int i, int j, int max) {
-        if (i < matriz.length) {
-            if (j < matriz[i].length) {
-                max = Math.max(max, matriz[i][j]);
-                max = recurMax(matriz, i, j + 1, max); 
-            } else {
-                max = recurMax(matriz, i + 1, 0, max); 
-            }
+    /**
+     * Esta mal la funcio por que utilziamos max como parametro, cuando es lo que
+     * queremos retornar
+     * public static int recurMax(int[][] matriz, int i, int j, int max) {
+     * if (i < matriz.length) {
+     * if (j < matriz[i].length) {
+     * max = Math.max(max, matriz[i][j]);
+     * max = recurMax(matriz, i, j + 1, max);
+     * } else {
+     * max = recurMax(matriz, i + 1, 0, max);
+     * }
+     * 
+     * }
+     * return max;
+     * }
+     */
 
+    public static int recurMax(int[][] matriz, int i, int j) {
+        int max;
+        if (i == matriz.length - 1 && j == matriz[0].length - 1) {
+            max = matriz[i][j];
+        } else if (j < matriz[0].length - 1) {
+            int mayorResto = recurMax(matriz, i, j + 1);
+            max = Math.max(matriz[i][j], mayorResto);
+        } else {
+            int mayorResto = recurMax(matriz, i + 1, 0);
+            max = Math.max(matriz[i][j], mayorResto);
         }
         return max;
     }

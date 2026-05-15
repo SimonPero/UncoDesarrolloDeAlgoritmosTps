@@ -6,18 +6,34 @@ package TpRecursion;
 public class once {
 
     public static int[] sumarArr(int[] arr) {
-        int[] res = { 0, 0 };
-        return recurSumar(arr, 0, res);
+        return recurSumar(arr, 0);
     }
 
-    public static int[] recurSumar(int[] arr, int i, int[] res) {
+    /**
+     * Esta mal por que usa res como parametro y es lo que queremos retornar
+     * public static int[] recurSumar(int[] arr, int i, int[] res) {
+     * if (i < arr.length) {
+     * if (i % 2 == 0) {
+     * res[0] += arr[i];
+     * } else {
+     * res[1] += arr[i];
+     * }
+     * res = recurSumar(arr, i + 1, res);
+     * }
+     * return res;
+     * }
+     */
+    public static int[] recurSumar(int[] arr, int i) {
+        int[] res = { 0, 0 };
         if (i < arr.length) {
+            int[] siguiente = recurSumar(arr, i + 1);
             if (i % 2 == 0) {
-                res[0] += arr[i];
+                res[0] += arr[i] + siguiente[0];
+                res[1] = siguiente[1];
             } else {
-                res[1] += arr[i];
+                res[0] = siguiente[0];
+                res[1] += arr[i] + siguiente[1];
             }
-            res = recurSumar(arr, i + 1, res);
         }
         return res;
     }

@@ -6,16 +6,31 @@ package TpRecursion;
  */
 public class quince {
     public static int contarVocales(char[] arr) {
-        return recurContarVoc(arr, 0, 0);
+        return recurContarVoc(arr, 0);
     }
 
-    public static int recurContarVoc(char[] arr, int i, int vocales) {
+    /**
+     * La funcion esta mal por que usamos el acumulador vocales como parametro, en
+     * vez de una fucion local que retornamos
+     * public static int recurContarVoc(char[] arr, int i, int vocales) {
+     * if (i < arr.length) {
+     * char c = Character.toLowerCase(arr[i]);
+     * if ("aeiou".indexOf(c) != -1) {
+     * vocales++;
+     * }
+     * vocales = recurContarVoc(arr, i + 1, vocales);
+     * }
+     * return vocales;
+     * }
+     */
+    public static int recurContarVoc(char[] arr, int i) {
+        int vocales = 0;
         if (i < arr.length) {
             char c = Character.toLowerCase(arr[i]);
             if ("aeiou".indexOf(c) != -1) {
-                vocales++;
+                vocales = 1;
             }
-            vocales = recurContarVoc(arr, i + 1, vocales);
+            vocales += recurContarVoc(arr, i + 1);
         }
         return vocales;
     }

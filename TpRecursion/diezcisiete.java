@@ -20,21 +20,40 @@ import java.util.Scanner;
 public class diezcisiete {
 
     public static void generarMediaPiramide(int num) {
-        recurGenerarMedPi(num, 1, "");
+        recurGenerarMedPi(num, 1);
     }
 
-    public static void recurGenerarMedPi(int num, int i, String renglon) {
+    /**
+     * //Esta mal la funcion por que usamos Renglon como parametro, cuando es lo que
+     * retornamos
+     * public static void recurGenerarMedPi(int num, int i, String renglon) {
+     * if (i <= num) {
+     * System.out.println(i + renglon);
+     * recurGenerarMedPi(num, i + 1, i + renglon);
+     * }
+     * }
+     */
+
+    public static void recurGenerarMedPi(int num, int i) {
         if (i <= num) {
-            System.out.println(i + renglon);
-            recurGenerarMedPi(num, i + 1, i + renglon);
+            System.out.println(recurGenerarRenglon(i));
+            recurGenerarMedPi(num, i + 1);
         }
+    }
+
+    public static String recurGenerarRenglon(int i) {
+        String renglon = "";
+        if (i > 0) {
+            renglon = i + recurGenerarRenglon(i - 1);
+        }
+        return renglon;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el numero de renglones de la media piramide");
         int num = sc.nextInt();
-
+        System.out.println("------------");
         generarMediaPiramide(num);
     }
 }
