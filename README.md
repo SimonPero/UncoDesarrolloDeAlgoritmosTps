@@ -20,6 +20,13 @@ Este repositorio contiene resoluciones de trabajos prácticos de la materia **De
 
 ---
 
+## 🧩 Reglas Generales (De la materia)
+
+* Toda funcion debe tener un solo return
+* En recursividad no hay que mandar como parámetro lo que vayas a retornar
+
+---
+
 ## 📂 TpArr
 
 🔗 [Ir a la carpeta](./TpArr)
@@ -64,7 +71,7 @@ Ejercicios orientados a:
 
 * UML (Unified Modeling Language)
 * TDA (Tipos de Datos Abstractos)
-* Programación Orientada a Objetos (POO)
+* Programación Orientada a Objetos (POO) (Lo basico de lo basico para TDA)
 
 ---
 
