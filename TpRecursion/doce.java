@@ -21,6 +21,7 @@ public class doce {
     }
 
     /**
+     * Este metodo esta mal por que usa res como parametro
      * public static boolean recurExisteChar(char[] arr, char letra, boolean res,
      * int i) {
      * if (i < arr.length && !res) {
