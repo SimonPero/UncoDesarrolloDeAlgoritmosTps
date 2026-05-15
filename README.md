@@ -24,6 +24,7 @@ Este repositorio contiene resoluciones de trabajos prácticos de la materia **De
 
 * Toda funcion debe tener un solo return
 * En recursividad no hay que mandar como parámetro lo que vayas a retornar
+* No se trabaja con matrices cuyas filas tengan distinto largo
 
 ---
 
